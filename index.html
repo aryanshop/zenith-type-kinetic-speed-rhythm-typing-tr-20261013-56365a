@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zenith Type: Kinetic Speed & Rhythm Typing Trainer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon">⚡</span>
+                <h1>Zenith Type</h1>
+            </div>
+            <nav class="mode-select">
+                <button class="mode-btn active" data-mode="zen">Zen Flow</button>
+                <button class="mode-btn" data-mode="sprint">Speed Sprint</button>
+                <button class="mode-btn" data-mode="rhythm">Beat Sync</button>
+            </nav>
+            <div class="audio-control">
+                <button id="audio-toggle" aria-label="Toggle Audio Engine">🔇 Audio Off</button>
+            </div>
+        </header>
+
+        <main class="main-content">
+            <section class="stats-bar">
+                <div class="stat-card">
+                    <span class="stat-label">WPM</span>
+                    <span id="stat-wpm" class="stat-value">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Accuracy</span>
+                    <span id="stat-acc" class="stat-value">100%</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Streak</span>
+                    <span id="stat-streak" class="stat-value">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Time</span>
+                    <span id="stat-time" class="stat-value">0:00</span>
+                </div>
+            </section>
+
+            <section class="typing-arena" id="arena">
+                <div class="focus-overlay" id="focus-overlay">
+                    <div class="focus-message">
+                        <h2>Click here or start typing to enter Flow</h2>
+                        <p>Match the rhythm. Feel the keys.</p>
+                    </div>
+                </div>
+                <div class="text-display" id="text-display" aria-live="polite"></div>
+                <input type="text" id="hidden-input" class="hidden-input" autocomplete="off" autocapitalize="off" spellcheck="false">
+            </section>
+
+            <section class="visualizer-section">
+                <canvas id="rhythm-canvas" width="800" height="120"></canvas>
+            </section>
+
+            <section class="results-modal" id="results-modal" hidden>
+                <div class="modal-content">
+                    <h2>Session Complete</h2>
+                    <div class="results-grid">
+                        <div class="result-item">
+                            <span class="r-label">Final WPM</span>
+                            <span id="res-wpm" class="r-value">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="r-label">Accuracy</span>
+                            <span id="res-acc" class="r-value">0%</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="r-label">Max Streak</span>
+                            <span id="res-streak" class="r-value">0</span>
+                        </div>
+                        <div class="result-item">
+                            <span class="r-label">Errors</span>
+                            <span id="res-err" class="r-value">0</span>
+                        </div>
+                    </div>
+                    <button id="restart-btn" class="primary-btn">New Session</button>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>Zenith Type &bull; Pure Vanilla JS & Web Audio Kinetic Experience</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
